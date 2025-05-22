@@ -1,40 +1,38 @@
 .post
   font-family: $basic-font-family
-  margin-bottom: 4em;  
+  margin-bottom: 4em
 
-  .post-title
-    font-family: $header-font-family  // Montserrat
-    font-size: 2em;
-    line-height: 1.3em;
-    font-weight: 600;  // Semi-bold weight
-    position: relative;
-    letter-spacing: -0.02em;  // Slightly tighter tracking for headlines
+  section
+    &.post-title
+      font-family: $header-font-family
+      font-size: 2em
+      line-height: 1.3em
+      font-weight: 600
+      position: relative
+      letter-spacing: -0.02em
 
-  .post-title:hover
-    text-decoration: none;
+      a:hover
+        text-decoration: none
 
-  .post-footer    
-    margin-top: 30px
-    clear: both
-    width: 100%
-
-  .post-meta, .post-footer
-    font-family: $header-font-family  // Montserrat
-    font-size: 0.9em
-    font-weight: 400  // Regular weight
-    color $font-secondary-color
-    letter-spacing: 0.02em  // Slightly looser tracking for better readability at small sizes
-
-    a
+    &.post-meta, &.post-footer
+      font-family: $header-font-family
+      font-size: 0.9em
+      font-weight: 400
       color $font-secondary-color
-      text-decoration: underline;
+      letter-spacing: 0.02em
 
-      &:hover
-        color $global-link-hover-color
-        text-decoration: none;
+      a
+        color $font-secondary-color
+        text-decoration: underline
 
+        &:hover
+          color $global-link-hover-color
+          text-decoration: none
 
-.post-title, .post-meta
+    &.post-footer
+      clear: both  // This ensures footer appears below floated content
+
+.post-title, .post-meta, .post-footer
   margin 0 10%
 
 .post-content
