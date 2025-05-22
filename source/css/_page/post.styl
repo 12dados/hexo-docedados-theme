@@ -3,29 +3,27 @@
   margin-bottom: 4em;  
 
   .post-title
-    font-size: 1.2em;
-    line-height: 1.5em;
-    text-decoration: underline;
-    font-weight: bold;
+    font-family: $header-font-family  // Montserrat
+    font-size: 2em;
+    line-height: 1.3em;
+    font-weight: 600;  // Semi-bold weight
     position: relative;
+    letter-spacing: -0.02em;  // Slightly tighter tracking for headlines
+
   .post-title:hover
     text-decoration: none;
-  .post-title::before
-    content: "#";
-    color: $post-link-hover-color;
-    font-size: 5em;
-    display: block;
-    position: absolute;
-    left: -70px;
-    top: 0px;
-    opacity: 0.3;
 
   .post-footer    
-    // margin-top: 30px
+    margin-top: 30px
+    clear: both
+    width: 100%
 
   .post-meta, .post-footer
-    font-size 1em
+    font-family: $header-font-family  // Montserrat
+    font-size: 0.9em
+    font-weight: 400  // Regular weight
     color $font-secondary-color
+    letter-spacing: 0.02em  // Slightly looser tracking for better readability at small sizes
 
     a
       color $font-secondary-color
@@ -119,26 +117,39 @@
     display block
     max-width 100%
     height auto
-    margin: 20px auto;
-    border-radius: 9px;
+    margin: 20px auto
+    border-radius: 9px
     overflow hidden
-    // for zoom
-    transition: transform .5s ease;
+    transition: transform .5s ease // Transition always present for smooth in/out
+    transform: scale(1) // Explicit initial state
+    &:hover
+      transform: scale(1.05) // Apply hover effect to standalone images
 
   .hexo-gallery-slider
-    margin 0 auto
-    max-width 50%
+    margin 10px 1.5em 10px 0
+    max-width 45%
     display block
     border-radius 9px
-    .slider
-      img
-        transition none
-      img:hover
-        transform none
+    float left
 
-  // zoom
-  img:hover
-    transform: scale(1.05);      
+    // Multi-image galleries - disable hover effects
+    .slider:has(li:nth-child(2)) img
+      transition: none
+      transform: none !important
+      &:hover
+        transform: none !important
+
+    // Single-image galleries - allow hover effects
+    .slider:not(:has(li:nth-child(2))) img
+      margin 0
+      transition: transform .5s ease
+      transform: scale(1)
+      &:hover
+        transform: scale(1.05)
+
+  // Apply hover effect only to standalone images (not in galleries)
+  img:not(.hexo-gallery-slider img):hover
+    transform: scale(1.05)
 
   img:hover + figcaption
     background-color: rgba($background-color, 1.0)
