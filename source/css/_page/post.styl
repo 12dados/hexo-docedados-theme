@@ -15,11 +15,12 @@
         text-decoration: none
 
     &.post-meta, &.post-footer
-      font-family: $header-font-family
-      font-size: 0.9em
-      font-weight: 400
+      font-family $header-font-family
+      font-size 0.9em
+      font-weight 400
       color $font-secondary-color
-      letter-spacing: 0.02em
+      letter-spacing 0.02em
+      margin-top 10px
 
       a
         color $font-secondary-color
@@ -129,11 +130,18 @@
     display block
     border-radius 9px
     float left
+    overflow hidden  // Add this to ensure inner content doesn't break radius
+
+    // Add border radius to all possible containers
+    .slider, .slider-container, .slider li
+      border-radius 9px
+      overflow hidden
 
     // Multi-image galleries - disable hover effects
     .slider:has(li:nth-child(2)) img
       transition: none
       transform: none !important
+      border-radius 9px // Ensure border radius during transitions
       &:hover
         transform: none !important
 
@@ -142,6 +150,7 @@
       margin 0
       transition: transform .5s ease
       transform: scale(1)
+      border-radius 9px // Ensure border radius during transitions
       &:hover
         transform: scale(1.05)
 
