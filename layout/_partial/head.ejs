@@ -54,14 +54,11 @@ title = 'Etiquetado como: ' + page.tag;
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
-<%# jquery only in home %>
-<% if (url_for(page.path) == '/index.html'){ %>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/scroll.js"></script>
-<script type="text/javascript" src="js/hamburger.js"></script>
-<% } %>
+<script type="text/javascript" src="<%- url_for('js/scroll.js') %>"></script>
+<script type="text/javascript" src="<%- url_for('js/hamburger.js') %>"></script>
 
 <style>
   <%- fa_css() %>
