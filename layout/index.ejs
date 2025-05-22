@@ -1,4 +1,4 @@
-<% if (url_for(page.path) == '/index.html'){ %>     
-  <%- partial('_partial/home') %>
+<% if (url_for(page.path) == '/index.html'){ %>
+<%- partial('_page/intro', { post: site.pages.findOne({path: 'intro/index.html'}), index: true }) %>
 <% } %>
 <%- partial('_page/archive', { index: true }) %>
