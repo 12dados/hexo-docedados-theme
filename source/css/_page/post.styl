@@ -40,8 +40,9 @@
   // padding-top 2rem
   font-size 1.3em
   line-height: 1.5em;
-  margin 15px 0
+  margin 15px 0 10px 0
   text-align justify
+  display inline-block
 
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -105,7 +106,7 @@
       border .5px solid $border-color
 
   p, blockquote, h2, h3, h4, h5, h6, ul, ol, table, pre, iframe
-    margin 15px 10%
+    margin 10px
 
   // p with their first child being img
   p:has(> img), figure  
@@ -118,7 +119,6 @@
     height auto
     margin: 20px auto
     border-radius: 9px
-    overflow hidden
     transition: transform .5s ease // Transition always present for smooth in/out
     transform: scale(1) // Explicit initial state
     &:hover
@@ -130,7 +130,9 @@
     display block
     border-radius 9px
     float left
-    overflow hidden  // Add this to ensure inner content doesn't break radius
+
+    img
+      margin 0
 
     // Add border radius to all possible containers
     .slider, .slider-container, .slider li
