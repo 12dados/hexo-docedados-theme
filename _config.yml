@@ -63,11 +63,8 @@ scripts:
 # Header
 nav:
   - title: Archivo
-    icon: ri-instagram-fill
-    url: /archivo
+    url: /archives
   - title: Juegos
-    icon: ri-book-2-fill
-    url: /juegos
+    url: /games
   - title: Nosotros
-    icon: ri-message-3-fill
     url: /about

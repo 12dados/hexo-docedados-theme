@@ -36,6 +36,7 @@
     gap 1rem
     height 100%
     max-width 1024px
+    position relative
 
   .header-top
     display flex
@@ -75,20 +76,19 @@
     margin-right auto
 
   .header-nav
-    position relative
-    top -25px
-    left auto
-    width 100%
-    text-align center
-    margin-left: 0
-    transform: translateX(0)
-    transition: margin-left 0.3s ease-in-out,
-                transform 0.3s ease-in-out,
-                top 0.3s ease-in-out
+    position absolute
+    // width 100%
+    left 50%
+    top 0
+    transform: translate(-50%, 120px)
+    transition: left 0.3s ease-in-out, transform 0.3s ease-in-out
+    width max-content
+
     ul
-      display flex
-      align-items center
-      justify-content center
+      display inline-flex
+      // display flex
+      // align-items center
+      // justify-content center
       list-style none
       margin 0
       padding 0
@@ -152,21 +152,20 @@ html:not([data-scroll='0'])
     font-size 30pt
 
   .header-nav
-    margin-left auto
-    position relative
-    top 32px
-    height fit-content
-    transform: translateX(0)
-    transition: margin-left 0.3s ease-in-out,
-                transform 0.3s ease-in-out,
-                top 0.3s ease-in-out
-    ul
-      display flex
-      align-items center
-      justify-content flex-end
-      list-style none
-      margin 0
-      padding 0
+    position absolute
+    // width 100%
+    left 100%
+    top 0
+    transform translate(-100%, 30px)
+    transition: left 0.3s ease-in-out, transform 0.3s ease-in-out
+
+    // ul
+      // display flex
+      // align-items center
+      // justify-content flex-end
+      // list-style none
+      // margin 0
+      // padding 0
 
 // Mobile menu styles
 @media screen and (max-width: 768px)
