@@ -24,11 +24,8 @@ const storeScroll = () => {
   document.documentElement.dataset.scroll = window.scrollY;
 };
 
+// Set initial scroll state immediately
+storeScroll();
+
 // Listen for new scroll events, here we debounce our `storeScroll` function
 document.addEventListener('scroll', debounce(storeScroll), { passive: true });
-
-// Initialize scroll position after everything is loaded
-window.addEventListener('load', () => {
-  // Update scroll position
-  storeScroll();
-});
