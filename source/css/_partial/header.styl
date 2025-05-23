@@ -226,8 +226,18 @@ html:not([data-scroll='0'])
         left 0
         right 0
         background rgba(255, 255, 255, 0.95)
-        padding 1rem
+        padding 0
         z-index 100
+        width 100%
+        transform none
+        transition none
+        text-align center
+
+        .nav
+          width 100%
+
+        .header-nav-separator
+          display none
         
         &.is-active
           display block
@@ -235,10 +245,13 @@ html:not([data-scroll='0'])
         ul
           flex-direction column
           gap 1rem
+          display block
           
           li
             width 100%
             text-align center
+            border-bottom 1px solid $font-color
+            padding 1rem 0
             
             a
               display block
@@ -248,7 +261,7 @@ html:not([data-scroll='0'])
         position: relative
         margin: 0 20px;
         height: 30px;
-        top: -32px;
+        top: -38px;
 
       .hamburger
         display: block
