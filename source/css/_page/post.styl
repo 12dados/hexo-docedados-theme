@@ -134,27 +134,14 @@
     img
       margin 0
 
-    // Add border radius to all possible containers
-    .slider, .slider-container, .slider li
-      border-radius 9px
-      overflow hidden
+    // Add overflow control based on gallery type
+    &:has(.slider > li:nth-child(2))
+      .slider-wrap
+        border-radius 9px
+        overflow hidden
+        img
+          border-radius 0
 
-    // Multi-image galleries - disable hover effects
-    .slider:has(li:nth-child(2)) img
-      transition: none
-      transform: none !important
-      border-radius 9px // Ensure border radius during transitions
-      &:hover
-        transform: none !important
-
-    // Single-image galleries - allow hover effects
-    .slider:not(:has(li:nth-child(2))) img
-      margin 0
-      transition: transform .5s ease
-      transform: scale(1)
-      border-radius 9px // Ensure border radius during transitions
-      &:hover
-        transform: scale(1.05)
 
   // Apply hover effect only to standalone images (not in galleries)
   img:not(.hexo-gallery-slider img):hover
@@ -176,7 +163,6 @@
     p
       margin 0
     
-
   blockquote
     // background: url('/images/quotes.gif') no-repeat top left;
     // border: none;
